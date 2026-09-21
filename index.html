@@ -1,148 +1,53 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>U8双日空投盛典</title>
 <style>
-:root{
-  --bg:#f3f7fc;--card:#fff;--line:#dfe8f3;--text:#273047;--muted:#7d879a;
-  --blue:#2f78f7;--blue2:#6fbfff;--orange:#ff8b27;--gold:#f7bd4b;--green:#2da878;
-}
-*{box-sizing:border-box}
-body{margin:0;background:#edf3f9;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--text)}
-.page{max-width:420px;margin:auto;min-height:100vh;background:#f8fbff}
-.top{height:64px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #edf2f7}
-.top b{font-size:20px}.back{position:absolute;left:18px;font-size:31px;font-weight:300;color:#2c3548}.content{padding:18px 20px 40px}
-.banner{height:190px;border-radius:18px 18px 0 0;position:relative;overflow:hidden;text-align:center;padding-top:28px;background:
- radial-gradient(circle at 78% 35%,rgba(255,255,255,.95) 0 3%,transparent 25%),
- linear-gradient(135deg,#e8f6ff 0%,#a7d8ff 46%,#5aa9f8 70%,#fff0bd 100%)}
-.banner:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;border:1px solid rgba(255,255,255,.55);right:-90px;top:-35px}
-.banner:after{content:"";position:absolute;left:28px;bottom:18px;width:300px;height:56px;border-radius:50%;background:linear-gradient(90deg,rgba(255,255,255,.1),rgba(255,255,255,.55),rgba(255,255,255,.12));transform:rotate(-8deg)}
-.logo{font-size:10px;color:#2d74dd;font-weight:950;letter-spacing:.6px}
-.banner h1{position:relative;z-index:2;margin:6px 0 3px;color:#1267d9;font-size:29px;font-style:italic;text-shadow:0 2px #fff;font-weight:1000}
-.banner h2{position:relative;z-index:2;margin:0;color:#3b5f8f;font-size:13px}
-.banner .award{position:relative;z-index:2;display:inline-block;margin-top:13px;padding:8px 22px;border-radius:999px;background:linear-gradient(#fff9d8,#efb944);border:2px solid #fff;color:#76511b;font-size:14px;font-weight:900;box-shadow:0 5px 13px #507aa42b}
-.banner .award strong{font-size:23px}
-.info{background:#fff;padding:13px 14px 15px;border-radius:0 0 18px 18px;font-size:12px;line-height:1.7;box-shadow:0 5px 14px #496b980c}
-.info b{color:#2b70ed}
-.section{display:flex;align-items:center;gap:12px;margin:26px 0 13px}.section:before,.section:after{content:"";height:2px;background:linear-gradient(90deg,transparent,#7fa6ff);flex:1}.section:after{background:linear-gradient(90deg,#7fa6ff,transparent)}.section b{font-size:18px;color:#58647e;white-space:nowrap}
-.progress-card{background:linear-gradient(135deg,#edf6ff,#f9fcff);border:1px solid #d9e9fb;border-radius:15px;padding:13px}
-.progress-main{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.progress-main .left b{font-size:13px}.progress-main .left span{display:block;font-size:9px;color:#8b95a8;margin-top:4px}
-.level-badge{padding:6px 9px;border-radius:999px;background:#2f78f7;color:#fff;font-size:9px;font-weight:950}
-.progress-line{height:9px;background:#fff;border-radius:99px;overflow:hidden;margin-top:12px}.progress-line i{display:block;height:100%;width:72%;background:linear-gradient(90deg,#367cf3,#69c4ff)}
-.progress-meta{display:flex;justify-content:space-between;margin-top:7px;font-size:9px;color:#7e899c}.progress-meta b{color:#2b70ed}
-.next-tip{margin-top:10px;background:#fff8ea;border:1px solid #ffe0a6;border-radius:10px;padding:8px 9px;font-size:9px;line-height:1.5;color:#725e37}
-.dual-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px;box-shadow:0 5px 13px #3958880b}
-.dual-title{display:flex;justify-content:space-between;align-items:flex-start}.dual-title b{font-size:14px}.dual-title span{font-size:8px;background:#edf5ff;border:1px solid #d7e7ff;color:#2c72ec;padding:5px 7px;border-radius:999px;font-weight:900}
-.dual-sub{font-size:9px;color:#8b95a8;margin-top:3px}
-.dual-flow{display:flex;gap:8px;align-items:center;margin-top:12px}.dual-step{flex:1;border:1px solid #e3eaf3;background:#f7f9fc;border-radius:12px;padding:10px 8px;text-align:center}.dual-step.active{background:linear-gradient(135deg,#ecf6ff,#f9fcff);border-color:#cfe2ff}.dual-date{font-size:16px;font-weight:1000;color:#2e72ee}.dual-name{font-size:11px;font-weight:950;margin-top:2px}.dual-desc{font-size:8px;line-height:1.5;color:#7d8799;margin-top:5px}.dual-status{display:inline-block;margin-top:7px;padding:4px 7px;border-radius:999px;background:#e9f8f1;color:#2ca477;font-size:8px;font-weight:900}.dual-status.wait{background:#fff1e2;color:#ef7c1f}.arrow{font-size:23px;color:#9bb0d0;font-weight:900}
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.sum{background:#f5f8fc;border-radius:9px;padding:8px 4px;text-align:center}.sum span{display:block;font-size:7px;color:#8b95a7}.sum b{display:block;margin-top:3px;font-size:9px;color:#2d70ea}
-.dual-note{margin-top:9px;background:#fff8ea;border:1px solid #ffe0a6;border-radius:9px;padding:8px 9px;font-size:8px;line-height:1.55;color:#74603c}
-.action-row{display:flex;gap:7px;margin-top:9px}.btn{flex:1;border:0;border-radius:9px;height:38px;background:#2f78f7;color:#fff;font-size:10px;font-weight:950}.btn.secondary{background:#edf4ff;color:#2e72ed}
-.reward-row{display:flex;gap:7px;margin-top:9px}.reward{flex:1;border-radius:10px;padding:9px}.reward.blue{background:#edf7ff;border:1px solid #dceeff}.reward.gold{background:#fff7e8;border:1px solid #ffe2ad}.reward span{display:block;font-size:7px;color:#8b95a7}.reward b{display:block;margin-top:3px;font-size:10px}
-.table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #dbe3ed;border-radius:12px;overflow:hidden;background:#fff;font-size:11px}.table th{background:#337bf1;color:#fff;padding:11px 5px}.table td{text-align:center;padding:12px 5px;border-right:1px solid #dbe3ed;border-top:1px solid #dbe3ed}.table td:last-child,.table th:last-child{border-right:0}.table .blue{color:#246df0;font-weight:900}
-.tip{font-size:9px;color:#8994a6;line-height:1.55;margin-top:9px}
-.rules{background:#fff;border:1px solid #e1e9f3;border-radius:13px;padding:13px}.rules h3{font-size:14px;margin:14px 0 7px}.rules h3:first-child{margin-top:0}.rules p,.rules li{font-size:11px;line-height:1.75;color:#3d4657}.rules ol{padding-left:20px;margin:6px 0}.rules .highlight{background:#f1f7ff;border-radius:9px;padding:8px 9px;color:#3567b5}
-.footer-note{font-size:9px;color:#9aa3b1;line-height:1.6;margin-top:15px;text-align:center}
-@media(max-width:430px){body{background:#fff}.page{max-width:none}}
-</style>
-</head>
-<body>
-<div class="page">
-  <div class="top"><span class="back">‹</span><b>U8双日空投盛典</b></div>
-  <div class="content">
-    <div class="banner">
-      <div class="logo">U8.COM · VIP成长活动</div>
-      <h1>U8双日空投盛典</h1>
-      <h2>15日蓄能 · 16日空投　VIP成长越多 · 好礼越丰厚</h2>
-      <div class="award">最高可享 <strong>588U</strong></div>
-    </div>
-    <div class="info">
-      <div>活动场馆：<b>JCP彩票、PG电子、PP电子、JDB捕鱼、索莱尔视讯、123GO</b></div>
-      <div>投注统计日期：<b>2026/09/15 ～ 2026/09/16</b></div>
-    </div>
+:root{--blue:#337bf1;--blue2:#edf5ff;--text:#2c3446;--muted:#7f899a;--line:#dce5ef;--bg:#f5f9fd;--orange:#f38a25}
+*{box-sizing:border-box}body{margin:0;background:#eef4fa;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--text)}
+.page{max-width:420px;margin:auto;min-height:100vh;background:#f9fcff}.top{height:64px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #edf2f7}.top b{font-size:20px}.back{position:absolute;left:18px;font-size:31px}.content{padding:18px 20px 42px}
+.banner{height:185px;border-radius:18px 18px 0 0;background:linear-gradient(135deg,#e6f5ff,#8fc9ff 58%,#f9df9e);position:relative;overflow:hidden;text-align:center;padding-top:27px}
+.banner:before{content:"U8";position:absolute;left:20px;top:5px;font-size:72px;font-weight:1000;color:#176ee6;opacity:.10}.banner h1{position:relative;margin:0;color:#1469df;font-size:29px;font-style:italic;text-shadow:0 2px #fff}.banner h2{position:relative;margin:7px 0 0;color:#45658e;font-size:12px}.award{position:relative;display:inline-block;margin-top:14px;padding:8px 21px;border-radius:999px;background:linear-gradient(#fff8d3,#efb842);border:2px solid #fff;color:#765018;font-size:13px;font-weight:900}.award strong{font-size:23px}
+.info{background:#fff;padding:13px 14px 15px;border-radius:0 0 18px 18px;font-size:12px;line-height:1.75;box-shadow:0 5px 14px #496b980d}.info b{color:#2d70ed}
+.status{margin-top:13px;background:#eef8ff;border-radius:13px;padding:13px;font-size:12px;line-height:1.65}.status b{color:#246df0}
+.section{display:flex;align-items:center;gap:12px;margin:25px 0 13px}.section:before,.section:after{content:"";height:2px;background:#83a7ff;flex:1}.section b{font-size:18px;color:#596682;white-space:nowrap}
+.progress{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{background:#f4f8fd;border-radius:10px;padding:10px}.metric span{display:block;font-size:8px;color:#8a94a6}.metric b{display:block;font-size:15px;margin-top:3px;color:#2d70ed}.bar{height:8px;background:#eaf0f6;border-radius:99px;overflow:hidden;margin-top:7px}.bar i{display:block;height:100%;background:linear-gradient(90deg,#377cf4,#6ac4ff)}.need{margin-top:10px;background:#fff8ea;border:1px solid #ffe0a6;border-radius:9px;padding:9px;font-size:9px;line-height:1.55;color:#735f3b}
+.tier{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #dbe3ed;border-radius:12px;overflow:hidden;background:#fff;font-size:10px}.tier th{background:#337bf1;color:#fff;padding:10px 4px}.tier td{text-align:center;padding:11px 4px;border-top:1px solid #dbe3ed;border-right:1px solid #dbe3ed}.tier td:last-child,.tier th:last-child{border-right:0}.tier tr.current td{background:#edf5ff}.tier .blue{color:#246df0;font-weight:900}
+.claim{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px}.claim-head{display:flex;justify-content:space-between;align-items:center}.claim-head b{font-size:14px}.badge{font-size:8px;background:#fff0df;color:#e57c1f;border-radius:999px;padding:5px 8px;font-weight:900}.claim p{font-size:10px;line-height:1.65;color:#7e899a}.btn{width:100%;height:43px;border:0;border-radius:9px;background:#337bf1;color:#fff;font-size:14px;font-weight:900}.btn.disabled{background:#dfe5eb}
+.rules{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px}.rules h3{font-size:13px;margin:14px 0 6px}.rules h3:first-child{margin-top:0}.rules p,.rules li{font-size:10px;line-height:1.75;color:#3e4758}.rules ol{padding-left:19px;margin:5px 0}.note{font-size:9px;color:#8d97a7;line-height:1.55;margin-top:9px}
+</style></head><body><div class="page"><div class="top"><span class="back">‹</span><b>U8双日空投盛典</b></div><div class="content">
+<div class="banner"><h1>U8双日空投盛典</h1><h2>双日充值 · VIP成长 · 达标派奖</h2><div class="award">最高可领 <strong>588U</strong></div></div>
+<div class="info"><div>活动场馆：<b>JCP彩票、PG电子、PP电子、JDB捕鱼、索莱尔视讯、123GO</b></div><div>投注统计日期：<b>2026/09/15 ～ 2026/09/16</b></div></div>
+<div class="status">活动期间累计您的<b>充值金额</b>与<b>新增VIP经验</b>，两项同时达到对应空投等级即可获得该等级空投奖励。</div>
 
-    <div class="section"><b>我的空投进度</b></div>
-    <div class="progress-card">
-      <div class="progress-main">
-        <div class="left"><b>VIP3 · 当前黄金空投</b><span>本期新增VIP经验 +168</span></div>
-        <div class="level-badge">黄金档</div>
-      </div>
-      <div class="progress-line"><i></i></div>
-      <div class="progress-meta"><span>当前：黄金空投</span><b>距离铂金还差82经验</b></div>
-      <div class="next-tip">再获得 <b>82 VIP经验</b>，可升级至铂金空投，奖励上限由 <b>188 U</b> 提升至 <b>388 U</b>。</div>
-    </div>
-
-    <div class="section"><b>双日空投玩法</b></div>
-    <div class="dual-card">
-      <div class="dual-title"><div><b>15日蓄能 → 16日空投</b><div class="dual-sub">同一条成长链路，15日提升档位，16日集中领取</div></div><span>VIP经验联动</span></div>
-      <div class="dual-flow">
-        <div class="dual-step active"><div class="dual-date">15日</div><div class="dual-name">空投蓄能</div><div class="dual-desc">充值 / 有效投注<br>按现有规则获得VIP经验</div><div class="dual-status">进行中</div></div>
-        <div class="arrow">›</div>
-        <div class="dual-step"><div class="dual-date">16日</div><div class="dual-name">超级空投</div><div class="dual-desc">领取VIP月福利<br>开启成长空投</div><div class="dual-status wait">待开启</div></div>
-      </div>
-      <div class="summary">
-        <div class="sum"><span>当前档位</span><b>黄金空投</b></div>
-        <div class="sum"><span>距离下一档</span><b>82 VIP经验</b></div>
-        <div class="sum"><span>预计奖励上限</span><b>188 U</b></div>
-      </div>
-      <div class="dual-note">15日不结算最终空投；16日按活动期间达到的最高有效档位开启。16日开启后若继续成长达到更高档位，只发放对应“升级加码”，不会重复领取低档奖励。</div>
-      <div class="action-row"><button class="btn" onclick="alert('原型：跳转充值页面')">去充值</button><button class="btn secondary" onclick="alert('原型：跳转游戏大厅')">去完成投注</button></div>
-      <div class="reward-row">
-        <div class="reward blue"><span>16日可领取</span><b>VIP月福利 58 U</b></div>
-        <div class="reward gold"><span>成长空投</span><b>黄金空投</b></div>
-      </div>
-    </div>
-
-    <div class="section"><b>空投档位</b></div>
-    <table class="table">
-      <thead><tr><th>档位</th><th>基础起点</th><th>升级条件</th><th>奖励示例</th></tr></thead>
-      <tbody>
-        <tr><td>白银</td><td>VIP0-1</td><td>默认起点</td><td class="blue">最高58U</td></tr>
-        <tr><td>黄金</td><td>VIP2-3</td><td>新增经验达标</td><td class="blue">最高188U</td></tr>
-        <tr><td>铂金</td><td>VIP4-5</td><td>新增经验达标</td><td class="blue">最高388U</td></tr>
-        <tr><td>至尊</td><td>VIP6+</td><td>新增经验冲刺</td><td class="blue">最高588U</td></tr>
-      </tbody>
-    </table>
-    <div class="tip">说明：VIP等级用于确定基础起点；活动期间新增VIP经验用于推动档位升级。实际档位、经验门槛及奖励以页面实时展示为准。</div>
-
-    <div class="section"><b>活动规则</b></div>
-    <div class="rules">
-      <h3>1. 活动时间</h3>
-      <p>本期活动投注统计日期为 <b>2026/09/15 ～ 2026/09/16</b>。其中15日为“空投蓄能日”，16日为“超级空投日”。</p>
-
-      <h3>2. 谁可以参加</h3>
-      <p>符合平台活动资格的用户均可参与，VIP0也可从基础空投开始。用户当前VIP等级及经验用于确定本期基础空投起点。</p>
-
-      <h3>3. 空投怎么升级</h3>
-      <p>15-16日期间，充值、有效投注等行为按照平台现有VIP规则正常产生VIP经验。本期新增VIP经验达到对应门槛后，空投档位自动升级。</p>
-      <div class="highlight">页面会实时展示：当前空投档位、活动新增VIP经验、距离下一档还差多少经验，以及下一档预计奖励。</div>
-
-      <h3>4. 15日怎么玩</h3>
-      <p>15日主要用于提升空投档位，不提前结算最终空投。用户可通过充值、有效投注等正常行为获取VIP经验，达到更高经验门槛后，16日可开启更高档空投。</p>
-
-      <h3>5. 16日怎么领</h3>
-      <ol>
-        <li>符合现有VIP月福利领取条件的用户，可正常领取16号月福利；月福利与本活动成长空投独立结算。</li>
-        <li>成长空投按照活动期间达到的最高有效档位开启。</li>
-        <li>开启当前空投后，16日剩余时间仍可继续获得VIP经验；若达到更高档位，可领取对应“升级加码”。</li>
-      </ol>
-
-      <h3>6. 奖励结算</h3>
-      <ol>
-        <li>已达到的有效空投档位不会因后续经验变化而降低。</li>
-        <li>同一档位空投仅可领取一次，不重复发放。</li>
-        <li>16日已开启低档空投后升级至更高档，仅发放该档对应的升级加码，不重复领取前一档奖励。</li>
-        <li>月福利、成长空投及升级加码分别判断资格，可按页面状态领取。</li>
-      </ol>
-
-      <h3>7. 其他说明</h3>
-      <p>活动奖励、档位经验门槛、领取有效期及异常账号处理，以活动页面和平台实际规则为准。异常充值、异常投注、关联账号等行为可能取消活动资格或奖励。</p>
-    </div>
-    <div class="footer-note">本页面为产品原型，奖励数值用于玩法说明，最终以运营配置为准。</div>
+<div class="section"><b>我的活动进度</b></div>
+<div class="progress">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <div><span style="display:block;font-size:8px;color:#8a94a6">当前空投奖励</span><b style="font-size:22px;color:#f18425">58 U</b></div>
+    <div style="text-align:right"><span style="display:block;font-size:8px;color:#8a94a6">当前空投等级</span><b style="font-size:13px;color:#2d70ed">进阶空投</b></div>
   </div>
+  <div class="metrics">
+    <div class="metric"><span>两日累计充值</span><b>320 / 500 U</b><div class="bar"><i style="width:64%"></i></div></div>
+    <div class="metric"><span>两日新增VIP经验</span><b>76 / 100</b><div class="bar"><i style="width:76%"></i></div></div>
+  </div>
+  <div class="need"><b>当前已解锁：进阶空投 58 U</b><br>距离升级至<b>高阶空投 88 U</b>，还需充值 <b>180 U</b> + 新增VIP经验 <b>24</b>；两项均达标后自动升级。</div>
 </div>
-</body>
-</html>
+
+<div class="section"><b>空投奖励等级</b></div>
+<table class="tier"><thead><tr><th>空投等级</th><th>累计充值</th><th>新增VIP经验</th><th>空投奖励</th></tr></thead><tbody>
+<tr><td>基础空投</td><td>≥100 U</td><td>≥20</td><td class="blue">18 U</td></tr>
+<tr class="current"><td><b>进阶空投</b></td><td><b>≥300 U</b></td><td><b>≥60</b></td><td class="blue">58 U</td></tr>
+<tr><td>高阶空投</td><td>≥500 U</td><td>≥100</td><td class="blue">88 U</td></tr>
+<tr><td>豪华空投</td><td>≥1,000 U</td><td>≥200</td><td class="blue">188 U</td></tr>
+<tr><td>尊享空投</td><td>≥2,000 U</td><td>≥350</td><td class="blue">388 U</td></tr>
+<tr><td>至尊空投</td><td>≥3,000 U</td><td>≥500</td><td class="blue">588 U</td></tr>
+</tbody></table>
+<div class="note">等级数值为产品原型示例，正式门槛及奖励金额由运营后台配置；充值金额与VIP经验必须同时满足。</div>
+
+<div class="section"><b>活动规则</b></div>
+<div class="rules">
+<h3>活动说明</h3><p>2026/09/15～2026/09/16期间，系统累计用户充值金额及新增VIP经验，两项同时达到对应空投等级即可获得该等级空投奖励。</p>
+<h3>等级判定</h3><ol><li>充值金额与新增VIP经验均按两日活动周期累计。</li><li>两项条件必须同时满足；若只满足其中一项，则按两项共同达到的最高空投等级计算。</li><li>VIP等级不直接决定活动空投等级，VIP经验仍按平台现有VIP规则正常计算。</li></ol>
+<h3>奖励派发</h3><ol><li>活动结束后按用户最终达到的最高空投等级派发一次奖励。</li><li>各等级奖励不累计领取，例如达到豪华空投，仅领取豪华空投奖励。</li><li>奖励派发状态及到账结果以页面实际展示为准。</li></ol>
+<h3>其他说明</h3><p>活动仅统计指定场馆及统计周期内的有效数据；异常充值、异常投注、关联账号等行为按平台现有风控规则处理。活动门槛、奖励金额及派发方式以最终活动配置为准。</p>
+</div>
+</div></div></body></html>
